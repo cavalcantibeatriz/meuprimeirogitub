@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reforma</title>
+</head>
+<body>
+    Quantos meses a reforma da casa levará? <input id="ipt_meses" type="text"><br><br>
+    Qual o valor diário? <input id="ipt_valor" type="text"><br><br>
+<button onclick ="semanal()">Ver projeção semanal</button><br><br>
+<button onclick ="mensal()">"Ver projeção mensal</button><br><br>
+<button onclick="total()">Ver projeção total</button><br><br>
+<div id="div_msg"></div>
+</body>
+</html>
+<script>
+
+function semanal() {
+    var gastoD = ipt_valor.value;
+    div_msg.innerHTML += `O valor do gasto com a obra em uma semana foi de:R$${gastoD*7}<br>`;
+    }
+function mensal() {
+    var gastoD = ipt_valor.value;
+    var equipa= 1200.00;
+    div_msg.innerHTML +=`O valor gasto com a obra em um mês foi de :R$${Number(gastoD*30) + Number(equipa)}<br>`;
+}
+function total() {
+    var gasto1M = Number(ipt_valor.value *30);
+    var meses = Number(ipt_meses.value);
+    var equipa= Number(1200.00);
+    div_msg.innerHTML += `O valor total gasto na obra foi de :R$${Number(gasto1M*meses) + Number(equipa)}<br>`;
+}
+</script>

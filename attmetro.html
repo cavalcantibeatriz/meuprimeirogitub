@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>metro</title>
+</head>
+<body>
+    
+    <button onclick ="oito()">Oito passagens</button>
+    <button onclick ="vinte()">Vinte passagens</button>
+    <button onclick ="cinquenta()">Cinquenta passagens</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+function oito() {
+    var var_pass = Number(4.40);
+    var oitop = Number(8);
+    var total= Number(35.20);
+    var recarga = Number(32.45);
+    var desconto = Number(4.06)*8;
+
+    div_msg.innerHTML += `Ao comprar ${oitop} passagens, você pagou ${((total - recarga)/total) .toFixed(2)}% a menos. É como se tivesse
+ganhado ${(desconto/var_pass) .toFixed(1)} passagens de "bônus".<br>`;}
+
+function vinte() {
+    var var_pass = Number(4.40);
+    var vinte = Number(20);
+    var total= Number(88.00);
+    var recarga = Number(78.65);
+    var desconto = Number(3.95)*20;
+
+    div_msg.innerHTML += `Ao comprar ${vinte} passagens, você pagou ${((total - recarga)/total) .toFixed(2)}% a menos. É como se tivesse
+ganhado ${(desconto/var_pass) .toFixed(1)} passagens de "bônus".<br>`;
+}
+function cinquenta() {
+    var var_pass = Number(4.40);
+    var cinquenta = Number(50);
+    var total= Number(220.00);
+    var recarga = Number(191.41);
+    var desconto = Number(3.83)*50;
+
+div_msg.innerHTML +=`Ao comprar ${cinquenta} passagens, você pagou ${((total - recarga)/total) .toFixed(2)}% a menos. É como se tivesse
+ganhado ${(desconto/var_pass) .toFixed(1)} passagens de "bônus".<br>`;
+}
+
+</script>

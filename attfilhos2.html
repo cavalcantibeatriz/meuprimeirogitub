@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade1filho</title>
+</head>
+
+<body>
+Insira quantidade de filhos menores de 10 anos:   <input id="ipt_filhosmenores" type="text"> <br>
+Insira quantidade de filhos maiores de 10 anos: <input id="ipt_filhosmaiores" type="text"><br>
+<br>
+<button onclick="aux_filhos()">Calcular Auxílio Filhos </button>
+<div id="div_msg" ></div>
+</body>
+</html>
+<script>
+
+function aux_filhos() {
+div_msg.innerHTML += `<br>Você tem ${ipt_filhosmenores.value} filhos menores de 10 anos e ${ipt_filhosmaiores.value} filhos a partir de 10 anos, logo, seu
+"Auxílio Filhos" será de R$${Number((ipt_filhosmenores.value*30) + (ipt_filhosmaiores.value * 25))}!`;    
+}
+</script>

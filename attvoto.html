@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>votos</title>
+</head>
+<body>
+
+    Votos em João: <input id="ipt_votosJoao" type="text"> <br><br>
+    Votos em Maria: <input id="ipt_votosMaria" type="text"> <br><br>
+    Votos em branco: <input id="ipt_votosBranco" type="text"><br><br>
+    Votos nulos: <input id="ipt_votosNulos" type="text"><br><br>
+    <button onclick="Resultado()">Resultado da eleição</button><br>
+<div id="div_msg" ></div>
+
+</body>
+</html>
+<script>
+function Resultado() {
+var var_total = Number(ipt_votosJoao.value) + Number(ipt_votosMaria.value) + Number(ipt_votosBranco.value) + Number(ipt_votosNulos.value);
+var var_invad = Number(ipt_votosBranco.value) + Number(ipt_votosNulos.value);
+div_msg.innerHTML += `Total de votos: ${var_total} <br>
+ Maria: ${Number(ipt_votosMaria.value/var_total*100)}% dos votos ou seja, ${ipt_votosMaria.value} votos;<br>
+ João: ${Number(ipt_votosJoao.value/var_total*100)}% dos votos ou seja, ${ipt_votosJoao.value} votos;<br> 
+ Inválidos: ${var_invad/var_total*100}% dos votos ou seja, ${var_invad} votos; <br>`;
+}
+
+
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balança</title>
+</head>
+<body>
+    Insira saldo inicial: <input id="ipt_saldo"type="text"><br><br>
+    Insira valor de crédito:<input id="ipt_credito"type="text"><br><br>
+    Insira valor de débito: <input id="ipt_debito"type="text"><br><br>
+<button onclick ="calcule()">Calcular</button><br>
+<div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function calcule() {
+    var saldoF= Number(ipt_saldo.value) + Number(ipt_credito.value);
+div_msg.innerHTML = `O saldo anterior é igual a R$${ipt_saldo.value}, a movimentação foi de R$ ${ipt_credito.value - ipt_debito.value},<br>`;
+div_msg.innerHTML += `O saldo final é de R$${saldoF - ipt_debito.value}, a diferença entre o saldos é R$${(ipt_saldo.value - (saldoF - ipt_debito.value)) .toFixed(2)} 
+,e portanto a proporção é R$${(((saldoF - ipt_debito.value)/ipt_saldo.value)*100) .toFixed(2)}.`;
+
+ipt_saldo.value=" ";
+ipt_credito.value=" ";
+ipt_debito.value=" ";
+}
+
+</script>.

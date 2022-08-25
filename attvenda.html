@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margem de vendas</title>
+</head>
+<body>
+    Insira nome do produto :<input id="ipt_produto" type="text"> <br><br>
+    Insira quantidade:<input id="ipt_qtd" type="text"><br><br>
+    Insira preço unitário de compra: <input id="ipt_preco" type="text"><br><br>
+
+    <button onclick ="precoemargem()">Calcular preço e margem de venda</button>
+<div id="div_msg"></div>
+
+</body>
+</html>
+<script>
+function precoemargem() {
+var PUV= Number(ipt_preco.value * 0.22) + Number(ipt_preco.value);
+var LucroT= Number(ipt_preco.value * 0.22) * Number(ipt_qtd.value);
+
+    div_msg.innerHTML += `Preço unitário de venda: R$${PUV}<br>`;
+    div_msg.innerHTML += `Valor de venda total: R$ ${PUV * ipt_qtd.value}<br>`;
+    div_msg.innerHTML += `Lucro total do produto: R$ ${LucroT}<br><br>`;
+    div_msg.innerHTML += `O nome do seu produto é ${ipt_produto.value}, e contem ${ipt_qtd.value} 
+    unidades ao preço unitário de compra R$ ${ipt_preco.value} e o seu valor unitário de venda é R$ ${PUV},  
+    o valor de venda total igual a R$ ${PUV * ipt_qtd.value} 
+    e seu preço unitário tributado é igual a R$ ${Number(PUV) + Number(1.25)}.`;
+    /*O nome do seu produto é A, com B unidades, ao preço unitário de compra R$ C, com o valor unitário de venda R$ D, com o valor de venda total igual a R$ E,
+e um total de lucro do produto R$ F, e seu preço tributado é igual a R$ G.
+    */
+}
+</script>

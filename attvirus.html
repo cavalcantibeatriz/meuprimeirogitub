@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skolvirus</title>
+</head>
+<body>
+    Pessoas infectadas atualmente : <input id="ipt_atual" type="text"> <br><br>
+<button onclick ="ontem()">Quantas pessoas infectadas ontem</button><br><br>
+<button onclick ="amanha()">Quantas pessoas infectadas amanhã</button><br><br>
+<button onclick = "mes()">Quantas pessoas infectadas daqui a 1 mês</button><br><br>
+<div id="div_msg"></div>
+</body>
+</html>
+<script>
+function ontem() {
+    var var_ontem = ipt_atual.value - 35;
+    div_msg.innerHTML += `Ontem haviam ${var_ontem} pessoas infectadas<br>`;}
+function amanha() {
+    var var_amanha = Number(ipt_atual.value) + Number(35);
+    div_msg.innerHTML += `Amanhã haverão ${var_amanha} pessoas infectadas<br>`;
+}
+function mes() {
+    var var_mes = Number(30*35);
+    div_msg.innerHTML += `Daqui a 1 mês haverão ${Number(ipt_atual.value) + var_mes} pessoas infectadas<br>`;
+}
+
+</script>

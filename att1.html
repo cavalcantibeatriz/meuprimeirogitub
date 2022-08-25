@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade1</title>
+</head>
+
+<body>
+Insira quantos filhos você tem:  <input id="ipt_filhos" type="text">
+<br>
+<button onclick="aux_filhos()">Calcular Auxílio Filhos </button>
+<div id="div_msg" ></div>
+</body>
+</html>
+<script>
+
+function aux_filhos() {
+div_msg.innerHTML += `<br>Você tem ${ipt_filhos.value} filhos, logo, seu Auxílio Filhos será de ${ipt_filhos.value * 25} reais`;    
+}
+</script>
